@@ -1,10 +1,20 @@
-<h2>Show Question</h2>
+<h1 class="mb-4">Show Question</h1>
 
-<%= @question.title %>
-<br>
-<%= @question.body %>
-<br>
+<div>
+    <%= @question.title %>
+    <br>
+    <%= @question.body %>
+    <br>
 
-<time datetime="<%= @question.formatted_created_at %>">
-    <%= @question.formatted_created_at %>
-  </time>
+    <time datetime="<%= @question.formatted_created_at %>">
+        <%= @question.formatted_created_at %>
+      </time>
+    <br>
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <%= link_to 'Show', question_path(@question), class: "btn btn-primary" %>
+       <%= link_to 'Edit', edit_question_path(@question), class: "btn btn-danger" %>
+       <%= button_to 'Destroy', @question, method: :delete, class: "btn btn-warning" %>
+    </div>
+ 
+    
+</div>

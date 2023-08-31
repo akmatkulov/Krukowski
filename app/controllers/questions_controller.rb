@@ -10,6 +10,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new question_params
     if @question.save
+      flash[:success] = "Question created!"
       redirect_to questions_path
     else
       render :new
@@ -32,6 +33,7 @@ class QuestionsController < ApplicationController
   def destroy
     @question = Question.find(params[:id])
     @question.destroy
+    flash[:success] = "Question deleted!"
     redirect_to questions_path
   end
 

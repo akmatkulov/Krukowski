@@ -1,14 +1,14 @@
+<%= render 'shared/errors', object: @question %>
 <%= form_with model: @question do |f| %>
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title, required: true, minlength: 2, placeholder: "title" %>
+  <div class="mb-3">
+    <%= f.label :title, class: "form-label", for: "Title" %>
+    <%= f.text_field :title, placeholder: "title", class: "form-control" %>
+  </div>
+  <div class="mb-3">
+     <%= f.label :body, class: "form-label", for: "Body" %>
+    <%= f.text_area :body, placeholder: "body", class: "form-control" %>
   </div>
 
-  <div>
-    <%= f.label :body %>
-    <%= f.text_field :body, required: true, minlength: 2, placeholder: "body" %>
-  </div>
-
-  <%= f.submit "Submit question" %>
+  <%= f.submit "Submit question", class: "btn btn-primary" %>
   
 <% end %>

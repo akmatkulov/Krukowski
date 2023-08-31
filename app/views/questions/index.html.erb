@@ -1,14 +1,31 @@
-<h2>Questions</h2>
+<h1 class="mb-4">Questions</h1>
 <% @questions.each do |item| %>
-  <p><%= item.title %></p>
+<article class="mt-3">
+    <div class="card" style="width: 18rem;">
 
-  <time datetime="<%= item.formatted_created_at %>">
-    <%= item.formatted_created_at %>
-  </time>
+    <div class="card-body">
+      <h5 class="card-title"><p><%= item.title %></p></h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary"><time datetime="<%= item.formatted_created_at %>">
+      <%= item.formatted_created_at %>
+    </time></h6>
+      <p class="card-text"><p><%= item.body %></p></p>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <%= link_to 'Show', question_path(item), class: "btn btn-primary" %>
+        <%= link_to 'Edit', edit_question_path(item), class: "btn btn-danger" %>
+        <%= button_to 'Destroy', item, method: :delete, class: "btn btn-warning" %>
+      </div>
+    </div>
+  </div>
 
-  <p><%= item.body %></p>
-  <br>
-  <%= link_to 'Show', question_path(item) %>
-  <%= link_to 'Edit', edit_question_path(item) %>
-  <%= button_to 'Destroy', item, method: :delete, class: "btn btn-warning" %>
+
+</article>
+
 <% end %>
+
+
+  
+
+  
+
+
+  
