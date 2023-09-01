@@ -1,14 +1,25 @@
 <%= render 'shared/errors', object: @question %>
+
 <%= form_with model: @question do |f| %>
-  <div class="mb-3">
-    <%= f.label :title, class: "form-label", for: "Title" %>
-    <%= f.text_field :title, placeholder: "title", class: "form-control" %>
-  </div>
-  <div class="mb-3">
-     <%= f.label :body, class: "form-label", for: "Body" %>
-    <%= f.text_area :body, placeholder: "body", class: "form-control" %>
+  <div class="mb-3 row">
+    <div class="col-sm-2 col-form-label">
+      <%= f.label :title %>
+    </div>
+
+    <div class="col-sm-10">
+      <%= f.text_field :title, placeholder: 'Title', class: 'form-control' %>
+    </div>
   </div>
 
-  <%= f.submit "Submit question", class: "btn btn-primary" %>
-  
+  <div class="mb-3 row">
+    <div class="col-sm-2 col-form-label">
+      <%= f.label :body %>
+    </div>
+
+    <div class="col-sm-10">
+      <%= f.text_area :body, class: 'form-control' %>
+    </div>
+  </div>
+
+  <%= f.submit "Submit question!", class: 'btn btn-primary' %>
 <% end %>

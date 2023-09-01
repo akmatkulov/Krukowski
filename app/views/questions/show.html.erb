@@ -28,16 +28,8 @@
    
   <h2>Answers</h2>
     <% @answers.each do |answer| %>
-      <article class="mb-3">
-          <time datetime="<%= answer.formatted_created_at %>">
-            <%= answer.formatted_created_at %>
-          </time>
-
-          <p>
-            <%= answer.body %>
-          </p>
-        <%= link_to 'Edit', edit_question_answer_path(@question, answer), class: "btn btn-danger" %>
-        <%= button_to 'Destroy', question_answer_path(@question, answer), method: :delete, class: "btn btn-warning" %>
-      </article>
+    
     <% end %>  
+
+    <%= render @answers %>
   

@@ -11,7 +11,7 @@
       <h6 class="card-subtitle mb-2 text-body-secondary"><time datetime="<%= item.formatted_created_at %>">
       <%= item.formatted_created_at %>
     </time></h6>
-      <p class="card-text"><p><%= item.body %></p></p>
+      <p class="card-text"><p><%= strip_tags(item.body) %></p></p>
       <div class="btn-group" role="group" aria-label="Basic example">
         <%= link_to 'Show', question_path(item), class: "btn btn-primary" %>
         <%= link_to 'Edit', edit_question_path(item), class: "btn btn-danger" %>
