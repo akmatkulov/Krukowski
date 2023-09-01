@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :questions
+  resources :questions do
+    resources :answers, except: %i[new show]
+  end
 
   #get '/questions', to: 'questions#index' #маршрут на вывод всех вопросов
   #get '/questions/new', to: 'questions#new' #маршрут формы для создание вопросов

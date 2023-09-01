@@ -1,4 +1,5 @@
 class Question < ApplicationRecord
+  has_many :answers, dependent: :destroy #удалить с ответами
   validates :title, presence: true, length: { minimum: 2 }
   validates :body, presence: true, length: { minimum: 2 }
 
